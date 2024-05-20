@@ -99,7 +99,6 @@ nav ul li a:hover {
         flex-direction: column;
         display: none;
         width: 100%;
-        text-align: ;
         background-color: rgb(255, 242, 250);
         position: absolute;
         top: 90px; /* Ajusta según el tamaño del header */
@@ -169,14 +168,9 @@ section {
 #inicio h1 {
     position: relative;
     bottom: 40px;
-    font-size: 2.2em;
+    font-size: 3.2em;
     margin: 0 0 10px;
-}
-
-@font-face {
-    font-family: 'fuentelogo';
-    src: url('fonts/ItalianBreakfast-Regular.otf') format('opentype'),
-         url('fonts/ItalianBreakfast-Regular.ttf') format('truetype'); 
+    font-family: 'dancing script';
 }
 
 #inicio .logoinicio {
@@ -208,6 +202,12 @@ section {
     margin: 0 auto;
     }
 
+#brillopropio {
+    margin: 0;
+    background-image: url('images/3.png');
+    background-size: cover;
+    background-position: center;
+}
 #acerca {
     background-color: #9de6e441;
 }
@@ -228,6 +228,7 @@ section {
     height: 280px; /* Ajusta según necesites */
     overflow: hidden; /* Asegura que el pseudo-elemento no sobresalga */
     background: #fbe4f56e;
+    opacity: 1.2;
 }
 #testimonios::before {
     content: '';
@@ -239,7 +240,7 @@ section {
     background-image: url('images/fondotestimonios.png');
     background-size: cover;
     background-position: auto;
-    opacity: 0.15; /* Ajusta la opacidad según necesites */
+    opacity: 0.04; /* Ajusta la opacidad según necesites */
     z-index: 1;
 }
 .contenido {
@@ -250,7 +251,7 @@ section {
 }
 
 #testimonios h2 {
-    color: #8e618b;
+    color: #bd88ae;
     text-align: center;
     font-size: 2.5em; /* Aumentar el tamaño del título */
     margin-bottom: 20px; /* Espaciado inferior */
@@ -307,7 +308,15 @@ section {
     margin-bottom: 20px; /* Espaciado inferior */
     }
     
-
+    #brillopropio .frasebrillo {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-size: 50px;
+        font-family: 'sacramento';
+        color: #34a0ae;
+        box-shadow: 0 0 10px #f5cff26f;
+    }
 
     #acerca .acerca-content {
     display: flex;
@@ -446,12 +455,13 @@ section {
         background-size: cover;
         background-position: auto;
     }
-    
-    #instagram iframe {
+
+    .eapps-instagram-feed {
         background-image: url('images/fondoinstagram.png');
-        border-radius: 10px;
-        padding: 10px;
-        max-width: 98%;
+        background-size: cover;
+        background-position: auto;
+        border-radius: 30px;
+        padding: 40px;
     }
     
     #contacto {
@@ -534,7 +544,12 @@ section {
     }
 
     #contacto a {
-        color: #302173;
+        color: #5c5b64;
+        text-decoration: none;
+        
+    }
+    #contacto a:hover {
+        color: #499bc4;
         text-decoration: none;
         
     }
@@ -542,6 +557,9 @@ section {
     @media (max-width: 400px) {
         #contacto .contact-info p {
             font-size: 14px;
+        }
+        #contacto h3 {
+            font-size: 25px;
         }
         #inicio h1 {
             font-size: 20px;
@@ -565,7 +583,7 @@ section {
         #acerca .acerca-content img {
             margin: auto;
             }
-    }
+        }
     
     footer {
     background-color: #07abbd1d;
@@ -584,6 +602,10 @@ section {
     font-size: 24px;
     margin: 0 10px;
     }
+
+    .social-links a i:hover {
+        color: #1d838f;
+        }
     
     .social-links a .fab {
     font-size: 24px;
@@ -634,9 +656,13 @@ section {
     
     /* Media Query for smaller screens */
     @media (max-width: 600px) {
+        #brillopropio .frasebrillo {
+            font-size: 28px
+        }
         .social-buttons {
             bottom: 10px;
             right: 10px;
+            margin-bottom: 4%;
         }
     
         .social-button {
@@ -648,7 +674,6 @@ section {
             font-size: 20px;
         }
     }
-    
     
 /* CSS adicional para hacer que el contenido sea responsive */
 /* CSS adicional para hacer que todo el contenido sea responsive */

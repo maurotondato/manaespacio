@@ -36,7 +36,7 @@ $(document).ready(function() {
             $('header').removeClass('scrolled');
         }
 
-        // Activar animaciones al desplazarse
+        // Activar animaciones al desplazarse, excepto para el feed de Instagram
         activateAnimations();
     });
 
@@ -45,7 +45,7 @@ $(document).ready(function() {
         $('nav ul').toggleClass('showing');
     });
 
-    // Activar animaciones al cargar la página
+    // Activar animaciones al cargar la página, excepto para el feed de Instagram
     activateAnimations();
 });
 
@@ -70,6 +70,11 @@ document.addEventListener("DOMContentLoaded", function () {
 // Función para activar animaciones
 function activateAnimations() {
     $('section').each(function() {
+        // No aplicar animaciones al div de Instagram
+        if ($(this).attr('id') === 'instagram') {
+            return;
+        }
+
         var elementOffset = $(this).offset().top;
         var scrollPos = $(window).scrollTop() + $(window).height();
         var sectionHeight = $(this).outerHeight();
@@ -83,6 +88,15 @@ function activateAnimations() {
             $(this).find('div, p, img, iframe').removeClass('animated scale-in');
         }
     });
+
+    // Activar animación solo en el título de la sección de Instagram
+    var instagramOffset = $('#instagram').offset().top;
+    var scrollPos = $(window).scrollTop() + $(window).height();
+    if (scrollPos > instagramOffset) {
+        $('#instagram h2').addClass('animated fade-in-up');
+    } else {
+        $('#instagram h2').removeClass('animated fade-in-up');
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -121,20 +135,20 @@ styleSheet.innerText = `
 }`;
 document.head.appendChild(styleSheet);
 
-    // Función para cambiar el orden de los elementos en la sección "acerca" en pantallas pequeñas
-    function cambiarOrden() {
-        const acercaContent = document.querySelector('.acerca-content');
-        const h3Element = document.querySelector('.holacursiva');
-        const imgElement = document.querySelector('.acerca-content img');
+// Función para cambiar el orden de los elementos en la sección "acerca" en pantallas pequeñas
+function cambiarOrden() {
+    const acercaContent = document.querySelector('.acerca-content');
+    const h3Element = document.querySelector('.holacursiva');
+    const imgElement = document.querySelector('.acerca-content img');
 
-        if (window.innerWidth <= 600) {
-            acercaContent.insertBefore(h3Element, imgElement.nextSibling);
-        } else {
-            // Restaurar el orden original si el ancho de la pantalla es mayor que 600px
-            document.querySelector('#acerca').insertBefore(h3Element, acercaContent);
-        }
+    if (window.innerWidth <= 1100) {
+        acercaContent.insertBefore(h3Element, imgElement.nextSibling);
+    } else {
+        // Restaurar el orden original si el ancho de la pantalla es mayor que 600px
+        document.querySelector('#acerca').insertBefore(h3Element, acercaContent);
     }
+}
 
-    // Ejecutar la función al cargar la página y al cambiar el tamaño de la ventana
-    window.addEventListener('load', cambiarOrden);
-    window.addEventListener('resize', cambiarOrden);
+// Ejecutar la función al cargar la página y al cambiar el tamaño de la ventana
+window.addEventListener('load', cambiarOrden);
+window.addEventListener('resize', cambiarOrden);
