@@ -52,19 +52,42 @@ $(document).ready(function() {
 document.addEventListener("DOMContentLoaded", function () {
     const cards = document.querySelectorAll(".card");
     cards.forEach(card => {
-        card.addEventListener("mouseenter", function () {
-            const moreText = this.querySelector(".more");
-            if (moreText) {
-                moreText.style.display = "inline";
-            }
-        });
-        card.addEventListener("mouseleave", function () {
-            const moreText = this.querySelector(".more");
-            if (moreText) {
-                moreText.style.display = "none";
+        card.addEventListener("click", function () {
+            const isHovered = this.classList.contains("hover");
+            cards.forEach(c => c.classList.remove("hover"));
+            if (!isHovered) {
+                this.classList.add("hover");
             }
         });
     });
+    
+    // Remove hover class when clicking outside the cards
+    document.addEventListener("click", function(event) {
+        if (!event.target.closest(".card")) {
+            cards.forEach(card => card.classList.remove("hover"));
+        }
+    });
+
+    // Make the social buttons visible with a slide-in effect
+    const socialButtons = document.querySelector('.social-buttons');
+    setTimeout(() => {
+        socialButtons.classList.add('visible');
+    }, 500); // Delay to start the animation after page load
+
+    // Add additional animation on hover
+    const buttons = document.querySelectorAll('.social-button');
+    buttons.forEach(button => {
+        button.addEventListener('mouseover', () => {
+            button.style.animation = 'bounce 0.5s ease';
+        });
+        button.addEventListener('animationend', () => {
+            button.style.animation = '';
+        });
+    });
+
+    // Change order of elements in the "acerca" section on small screens
+    cambiarOrden();
+    window.addEventListener('resize', cambiarOrden);
 });
 
 // Función para activar animaciones
@@ -99,24 +122,19 @@ function activateAnimations() {
     }
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Make the social buttons visible with a slide-in effect
-    const socialButtons = document.querySelector('.social-buttons');
-    setTimeout(() => {
-        socialButtons.classList.add('visible');
-    }, 500); // Delay to start the animation after page load
+// Función para cambiar el orden de los elementos en la sección "acerca" en pantallas pequeñas
+function cambiarOrden() {
+    const acercaContent = document.querySelector('.acerca-content');
+    const h3Element = document.querySelector('.holacursiva');
+    const imgElement = document.querySelector('.acerca-content img');
 
-    // Add additional animation on hover
-    const buttons = document.querySelectorAll('.social-button');
-    buttons.forEach(button => {
-        button.addEventListener('mouseover', () => {
-            button.style.animation = 'bounce 0.5s ease';
-        });
-        button.addEventListener('animationend', () => {
-            button.style.animation = '';
-        });
-    });
-});
+    if (window.innerWidth <= 1100) {
+        acercaContent.insertBefore(h3Element, imgElement.nextSibling);
+    } else {
+        // Restaurar el orden original si el ancho de la pantalla es mayor que 600px
+        document.querySelector('#acerca').insertBefore(h3Element, acercaContent);
+    }
+}
 
 // Keyframes for bounce effect
 const styleSheet = document.createElement("style");
@@ -134,21 +152,3 @@ styleSheet.innerText = `
     }
 }`;
 document.head.appendChild(styleSheet);
-
-// Función para cambiar el orden de los elementos en la sección "acerca" en pantallas pequeñas
-function cambiarOrden() {
-    const acercaContent = document.querySelector('.acerca-content');
-    const h3Element = document.querySelector('.holacursiva');
-    const imgElement = document.querySelector('.acerca-content img');
-
-    if (window.innerWidth <= 1100) {
-        acercaContent.insertBefore(h3Element, imgElement.nextSibling);
-    } else {
-        // Restaurar el orden original si el ancho de la pantalla es mayor que 600px
-        document.querySelector('#acerca').insertBefore(h3Element, acercaContent);
-    }
-}
-
-// Ejecutar la función al cargar la página y al cambiar el tamaño de la ventana
-window.addEventListener('load', cambiarOrden);
-window.addEventListener('resize', cambiarOrden);

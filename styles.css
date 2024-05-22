@@ -170,7 +170,7 @@ section {
     bottom: 40px;
     font-size: 3.2em;
     margin: 0 0 10px;
-    font-family: 'dancing script';
+    font-family: 'dancing script', sans-serif;
 }
 
 #inicio .logoinicio {
@@ -220,7 +220,7 @@ section {
 }
 
 #acerca p {
-    font-family: 'roboto';
+    font-family: 'roboto', sans-serif;
 }
 
 #testimonios {
@@ -313,7 +313,7 @@ section {
         padding: 0;
         text-align: center;
         font-size: 50px;
-        font-family: 'sacramento';
+        font-family: 'great vibes', sans-serif;
         color: #34a0ae;
         box-shadow: 0 0 10px #f5cff26f;
     }
@@ -340,7 +340,7 @@ section {
         margin-right: 10%;
         text-align: end;
         font-size: 40px;
-        font-family: 'dancing script';
+        font-family: 'dancing script', sans-serif;
     }
 
     #acerca .acerca-content p {
@@ -356,7 +356,7 @@ section {
 }
 
 #terapias p {
-    font-family: 'roboto';
+    font-family: 'roboto', sans-serif;
 }
 
 .services-container {
@@ -410,6 +410,21 @@ section {
   .card:hover .more {
     display: inline;
   }
+
+  .card.hover, .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #b4deff56;
+  }
+  
+  .card.hover .more, .card:hover .more {
+    display: inline;
+  }
+  
+  .card:hover img {
+    width: 105%;
+  }
+  
   
   /* Responsividad */
   @media (max-width: 768px) {
@@ -431,13 +446,13 @@ section {
     }
     
     .testimonial p {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-size: 1.2em;
     text-align: center;
     }
     
     .testimonial span {
-    font-family: 'dancing script';
+    font-family: 'dancing script', sans-serif;
     font-size: 2em;
     display: block;
     text-align: right;
@@ -477,7 +492,7 @@ section {
     }
 
     #contacto h3 {
-        font-family: 'dancing script';
+        font-family: 'dancing script', sans-serif;
         font-size: 2.5em;
         color: #6d6c6c;
         margin-top: 0;
@@ -555,6 +570,15 @@ section {
     }
 
     @media (max-width: 400px) {
+        .testimonial span {
+            font-size: 25px;
+            }
+
+        #acerca .holacursiva {
+            font-size: 30px;
+            margin-top: 10px;
+            margin-left: 20%;
+        }
         #contacto .contact-info p {
             font-size: 14px;
         }
@@ -567,6 +591,7 @@ section {
     }    
     
     @media (max-width: 768px) {
+
         #contacto .contacto-content {
             flex-direction: column;
             align-items: center;
@@ -583,6 +608,11 @@ section {
         #acerca .acerca-content img {
             margin: auto;
             }
+        }
+        @media (max-width: 1400px) {  
+        #brillopropio .frasebrillo {
+            font-size: 48px;
+        }
         }
     
     footer {
@@ -657,7 +687,7 @@ section {
     /* Media Query for smaller screens */
     @media (max-width: 600px) {
         #brillopropio .frasebrillo {
-            font-size: 28px
+            font-size: 32px
         }
         .social-buttons {
             bottom: 10px;
