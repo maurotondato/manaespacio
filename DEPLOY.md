@@ -90,46 +90,75 @@ También conviene:
 
 ### Google Search Console
 
-Hacelo **después** de que el dominio ya cargue desde Pages, no antes.
+Hacelo con el dominio ya cargando desde Pages.
 
-1. **Verificar la propiedad.** Elegí el tipo **Dominio** (no "Prefijo de URL"):
-   cubre `manaespacio.com`, `www.manaespacio.com` y http/https de una sola vez,
-   y se verifica con un registro `TXT` en el DNS, así que sobrevive a cualquier
-   cambio de alojamiento. Si la verificación anterior era un archivo
-   `googleXXXX.html` subido al sitio viejo, ya no existe y hay que rehacerla.
-2. **Enviar el sitemap** en *Sitemaps* → `sitemap.xml`.
-3. **Pedir indexación** de las tres URL nuevas en *Inspección de URLs*:
-   `/about/`, `/contact/` y `/privacy/`. Antes el sitio era una sola página, así
-   que estas no existían.
-4. **No** añadas `maurotondato.github.io` como propiedad. Todas las páginas
-   declaran su `rel="canonical"` hacia `manaespacio.com`, así que la vista previa
-   no compite con el dominio.
-5. En *Cobertura* pueden aparecer los alias (`/sobre-mi/`, `/contacto/`…) como
-   "Página alternativa con etiqueta canónica adecuada" o "Excluida por noindex".
-   Es el comportamiento buscado, no un error.
+**1 · Crear la propiedad.** En [search.google.com/search-console](https://search.google.com/search-console)
+→ selector de propiedades (arriba a la izquierda) → **Añadir propiedad**.
+Elegí la columna **Dominio**, no "Prefijo de la URL", y escribí:
 
----
+```
+manaespacio.com
+```
 
-## 4. Qué no puede hacer GitHub Pages
+Sin `https://`, sin `www`, sin barra final. La propiedad de tipo Dominio cubre
+el apex, el `www` y http/https de una sola vez, y se verifica por DNS, así que
+no se rompe si algún día cambiás de alojamiento.
 
-Pages sirve archivos y nada más: no deja definir cabeceras HTTP propias ni
-ejecutar código. Por eso hay dos cosas de la lista original que **no se cumplen**
-con este alojamiento:
+**2 · Verificar por DNS.** Google devuelve un registro parecido a
+`google-site-verification=AbC123...`. En el panel del registrador del dominio,
+creá un registro:
 
-| | Estado |
+| Campo | Valor |
 | --- | --- |
-| `Vary: Accept, Accept-Encoding` | ❌ no se puede enviar |
-| Markdown por `Accept: text/markdown` | ❌ no se puede negociar |
+| Tipo | `TXT` |
+| Nombre / Host | `@` (en algunos paneles se deja vacío, o se escribe `manaespacio.com`) |
+| Valor | la cadena completa `google-site-verification=...` |
+| TTL | el que venga por defecto |
 
-Lo que sí queda resuelto: las variantes markdown existen como archivos estáticos
-en `/md/`, y cada página las declara en su `<head>` con
-`rel="alternate" type="text/markdown"`, además de listarlas `llms.txt`. Un agente
-las encuentra igual; lo que no puede es pedirlas por cabecera.
+Este `TXT` convive sin problema con los registros `A` de GitHub: no los pisa.
 
-Si en algún momento querés recuperar esas dos cosas, la configuración de Netlify
-que las resolvía está en el historial de git (commit `d0d261f`, archivos
-`netlify.toml` y `netlify/edge-functions/content-negotiation.ts`). Otra opción es
-poner Cloudflare gratis por delante de Pages, que sí permite añadir cabeceras.
+Para comprobar que propagó antes de pulsar *Verificar*:
+
+```bash
+dig +short TXT manaespacio.com
+# → tiene que aparecer "google-site-verification=..."
+```
+
+Suele tardar entre unos minutos y un par de horas. Si Google dice que no lo
+encuentra, esperá y volvé a intentar; no hace falta rehacer nada.
+
+**3 · Enviar el sitemap.** Ya verificado: menú lateral → **Sitemaps** → en
+"Añadir un sitemap nuevo" escribí `sitemap.xml` → **Enviar**. El estado pasa a
+"Correcto" y detecta 4 URL.
+
+**4 · Pedir indexación de las páginas nuevas.** Antes el sitio era una sola
+página, así que estas tres no existían. En la barra superior (*Inspeccionar
+cualquier URL*), pegá cada una y pulsá **Solicitar indexación**:
+
+```
+https://manaespacio.com/about/
+https://manaespacio.com/contact/
+https://manaespacio.com/privacy/
+```
+
+La portada conviene inspeccionarla también, para que Google vuelva a rastrearla
+con el diseño nuevo.
+
+**5 · Qué NO hacer.** No añadas `maurotondato.github.io` como propiedad: todas
+las páginas declaran `rel="canonical"` hacia `manaespacio.com`, así que la vista
+previa no compite con el dominio.
+
+**6 · Qué vas a ver después.** En *Páginas*, los alias (`/sobre-mi/`,
+`/contacto/`, `/privacidad/`, `/servicios/`, `/testimonios/`), `/gracias/` y el
+404 aparecen como "Excluida por la etiqueta noindex" o "Página alternativa con
+la etiqueta canónica correcta". Es lo buscado, no un error. Las tres páginas
+nuevas pueden tardar de días a semanas en pasar de "Descubierta" a "Indexada".
+
+**7 · Si ya tenías una propiedad de la época de Netlify.** Seguirá en la lista.
+Si era de tipo "Prefijo de la URL" y se verificó con un archivo `googleXXXX.html`
+subido al sitio, esa verificación ya no vale, porque el sitio viejo se
+reemplazó. La propiedad de Dominio del paso 1 la reemplaza con ventaja; podés
+dejar la vieja o borrarla, no molesta.
 
 ---
 
