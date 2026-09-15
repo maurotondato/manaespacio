@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Página no encontrada (404) — Mana Espacio Integral</title>
+<meta name="description" content="La dirección que buscás no existe en manaespacio.com. Estos son los caminos disponibles." />
+<meta name="robots" content="noindex, follow" />
+<meta name="theme-color" content="#fffbf8" />
+<link rel="icon" href="https://manaespacio.com/images/favicon.ico" sizes="any" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300&family=Raleway:wght@400;600;700&family=Sacramento&display=swap" rel="stylesheet" />
+
+<!--
+  Esta página se sirve ante cualquier ruta inexistente, a cualquier
+  profundidad (/loquesea, /a/b/c...). Por eso NO enlaza hojas de estilo ni
+  imágenes con rutas relativas: llevaría los estilos a resolverse contra la
+  carpeta equivocada y la página aparecería sin diseño justo cuando más
+  importa. Los estilos van en línea y los enlaces apuntan al dominio canónico.
+-->
+<style>
+  :root {
+    --cream:#fffbf8; --blush:#faeaf1; --ink:#12403f; --ink-soft:#5d7a79;
+    --teal:#2d8a89; --teal-deep:#176564; --pink:#e8388f; --pink-deep:#c81f74;
+    --pink-soft:#fbb6d6; --line:rgba(18,64,63,.10);
+    color-scheme: light;
+  }
+  *,*::before,*::after { box-sizing: border-box; }
+  body {
+    margin:0; min-height:100svh;
+    display:flex; flex-direction:column;
+    font-family:"Raleway",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+    font-size:16px; line-height:1.7; color:#2c5c5b;
+    background:linear-gradient(165deg,var(--blush),var(--cream) 65%);
+    -webkit-font-smoothing:antialiased;
+  }
+  main { flex:1; display:grid; place-items:center; padding:clamp(3rem,9vw,6rem) clamp(1.25rem,5vw,3rem); }
+  .box { width:100%; max-width:640px; text-align:center; }
+  .code {
+    font-family:"Cormorant Garamond",Georgia,serif; font-weight:300; font-style:italic;
+    font-size:clamp(6rem,22vw,12rem); line-height:.85; margin:0;
+    background:linear-gradient(120deg,var(--teal),var(--pink));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .eyebrow {
+    display:block; margin:.6rem 0 1.2rem;
+    font-size:.72rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--teal);
+  }
+  h1 {
+    font-family:"Cormorant Garamond",Georgia,serif; font-weight:300; font-style:italic;
+    font-size:clamp(2rem,5.5vw,3.2rem); line-height:1.12; color:var(--ink); margin:0 0 .6em;
+  }
+  p { margin:0 0 1.6em; color:var(--ink-soft); }
+  ul { list-style:none; margin:0 0 2.4rem; padding:0; text-align:left; display:grid; gap:.55rem; }
+  li a {
+    display:flex; align-items:baseline; gap:.7rem;
+    padding:.85rem 1.1rem; border:1px solid var(--line); border-radius:14px;
+    background:rgba(255,255,255,.7); color:var(--ink); text-decoration:none;
+    transition:transform .4s cubic-bezier(.22,1,.36,1), border-color .3s, background .3s;
+  }
+  li a:hover, li a:focus-visible {
+    transform:translateX(5px); border-color:var(--pink-soft); background:#fff;
+  }
+  li a b { font-weight:600; white-space:nowrap; }
+  li a span { color:var(--ink-soft); font-size:.9rem; }
+  .btn {
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:.95rem 1.9rem; border-radius:999px;
+    background:linear-gradient(120deg,var(--pink),var(--pink-deep)); color:#fff;
+    font-size:.8rem; font-weight:600; letter-spacing:.13em; text-transform:uppercase; text-decoration:none;
+    box-shadow:0 20px 45px -18px rgba(232,56,143,.55);
+    transition:transform .4s cubic-bezier(.22,1,.36,1);
+  }
+  .btn:hover, .btn:focus-visible { transform:translateY(-3px); }
+  footer {
+    padding:1.6rem; text-align:center; font-size:.78rem; color:var(--ink-soft);
+    border-top:1px solid var(--line);
+  }
+  footer .mana { font-family:"Sacramento",cursive; font-size:1.7rem; color:var(--teal-deep); display:block; line-height:1; margin-bottom:.3rem; }
+  a:focus-visible { outline:2px solid var(--pink); outline-offset:3px; }
+  @media (prefers-reduced-motion:reduce) { * { transition:none !important; } }
+</style>
+</head>
+<body>
+<main>
+  <div class="box">
+    <p class="code">404</p>
+    <span class="eyebrow">Esta dirección no existe</span>
+    <h1>Nos perdimos en el camino</h1>
+    <p>La página que buscabas no está en <strong>manaespacio.com</strong>. Estos son los caminos que sí existen.</p>
+
+    <ul>
+      <li><a href="https://manaespacio.com/"><b>Inicio</b> <span>— presentación del espacio y todos los servicios</span></a></li>
+      <li><a href="https://manaespacio.com/about/"><b>Sobre mí</b> <span>— quién es Agustina Nasello y cómo trabaja</span></a></li>
+      <li><a href="https://manaespacio.com/contact/"><b>Contacto</b> <span>— formulario, email, WhatsApp e Instagram</span></a></li>
+      <li><a href="https://manaespacio.com/privacy/"><b>Privacidad</b> <span>— cómo tratamos tus datos</span></a></li>
+      <li><a href="https://manaespacio.com/sitemap.xml"><b>sitemap.xml</b> <span>— índice completo del sitio</span></a></li>
+      <li><a href="https://manaespacio.com/llms.txt"><b>llms.txt</b> <span>— guía para asistentes y agentes de IA</span></a></li>
+    </ul>
+
+    <a class="btn" href="https://manaespacio.com/">Volver al inicio</a>
+  </div>
+</main>
+
+<footer>
+  <span class="mana">mana</span>
+  © <span id="y">2026</span> Mana Espacio Integral
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</footer>
+</body>
+</html>

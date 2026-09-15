@@ -1,0 +1,9 @@
+# manaespacio.com
+User-agent: *
+Allow: /
+Disallow: /gracias/
+
+# Guía para asistentes y agentes de IA
+# https://manaespacio.com/llms.txt
+
+Sitemap: https://manaespacio.com/sitemap.xml
