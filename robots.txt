@@ -1,7 +1,11 @@
 # manaespacio.com
 User-agent: *
 Allow: /
-Disallow: /gracias/
+
+# /gracias/ y los alias en español no se bloquean aquí a propósito: llevan
+# <meta name="robots" content="noindex">, y para obedecerlo Google necesita
+# poder rastrear la página. Un Disallow le impediría leer ese noindex y la URL
+# podría acabar listada igual, sin descripción.
 
 # Guía para asistentes y agentes de IA
 # https://manaespacio.com/llms.txt

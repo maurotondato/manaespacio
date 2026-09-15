@@ -84,10 +84,29 @@ curl -s https://manaespacio.com/sobre-mi/ | grep -o 'url=[^"]*'
 
 También conviene:
 
-- **Google Search Console** → enviar `https://manaespacio.com/sitemap.xml`.
 - **[Rich Results Test](https://search.google.com/test/rich-results)** → pegar
   `https://manaespacio.com/` y confirmar que detecta `Organization` y `Person`.
 - **PageSpeed Insights** → `https://manaespacio.com/`.
+
+### Google Search Console
+
+Hacelo **después** de que el dominio ya cargue desde Pages, no antes.
+
+1. **Verificar la propiedad.** Elegí el tipo **Dominio** (no "Prefijo de URL"):
+   cubre `manaespacio.com`, `www.manaespacio.com` y http/https de una sola vez,
+   y se verifica con un registro `TXT` en el DNS, así que sobrevive a cualquier
+   cambio de alojamiento. Si la verificación anterior era un archivo
+   `googleXXXX.html` subido al sitio viejo, ya no existe y hay que rehacerla.
+2. **Enviar el sitemap** en *Sitemaps* → `sitemap.xml`.
+3. **Pedir indexación** de las tres URL nuevas en *Inspección de URLs*:
+   `/about/`, `/contact/` y `/privacy/`. Antes el sitio era una sola página, así
+   que estas no existían.
+4. **No** añadas `maurotondato.github.io` como propiedad. Todas las páginas
+   declaran su `rel="canonical"` hacia `manaespacio.com`, así que la vista previa
+   no compite con el dominio.
+5. En *Cobertura* pueden aparecer los alias (`/sobre-mi/`, `/contacto/`…) como
+   "Página alternativa con etiqueta canónica adecuada" o "Excluida por noindex".
+   Es el comportamiento buscado, no un error.
 
 ---
 
