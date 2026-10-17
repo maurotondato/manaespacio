@@ -739,6 +739,29 @@ p:last-child { margin-bottom: 0; }
   display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center;
   padding-top: 1.8rem; font-size: .78rem; color: rgba(255, 251, 248, .5);
 }
+
+/* Crédito de autoría: deliberadamente discreto — más chico y más tenue que el
+   copyright, en su propia línea, y sólo toma color al pasar por encima. */
+.footer-credit {
+  margin: 1.4rem 0 0;
+  text-align: center;
+  font-size: .68rem;
+  letter-spacing: .08em;
+  color: rgba(255, 251, 248, .3);
+}
+.footer-credit a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 251, 248, .16);
+  padding-bottom: 1px;
+  transition: color .35s var(--ease-soft), border-color .35s var(--ease-soft);
+}
+.footer-credit a:hover,
+.footer-credit a:focus-visible {
+  color: var(--pink-soft);
+  border-color: var(--pink-soft);
+}
+
 .footer-social { display: flex; gap: .7rem; }
 .footer-social a {
   width: 38px; height: 38px; border-radius: 50%;
