@@ -2,7 +2,7 @@
 
 **Psicología y herramientas para ordenar tu vida.**
 Terapia psicológica online para todo el mundo y presencial, Yoga, lectura de
-oráculo, coaching de vida y manifestación holística.
+coaching de vida y manifestación holística, con atención presencial en Tandil.
 
 A cargo de la **Lic. Agustina Nasello**, licenciada en Psicología por la
 Universidad Nacional de La Plata (Argentina).
@@ -70,15 +70,11 @@ en que te relacionas tanto con los demás como con vos mismo. En cada relato
 encontrarás un mensaje profundo dirigido directamente a tu alma. Disponible en
 formato físico o ebook.
 
-### 5. Sesiones de Oráculo
+### 5. Atención presencial en Tandil
 
-Un oráculo es una herramienta sagrada de conexión interior, autoconocimiento y guía
-espiritual. A través de símbolos, palabras y sensaciones, nos permite abrir un canal
-con nuestra sabiduría interna y con la energía amorosa de nuestros guías espirituales.
-
-El oráculo que utilizo en los encuentros ha sido canalizado por mí con profunda
-dedicación y amor. No se trata de predecir el futuro, sino de reconectar con tu
-verdad, tu intuición y el camino que estás llamado/a a transitar.
+Además de la modalidad online, atiendo de forma presencial en Tandil, Provincia de
+Buenos Aires. Los días y horarios se coordinan según disponibilidad: escribime para
+consultar.
 
 ### 6. Reprograma tu realidad — Ebook
 

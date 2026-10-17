@@ -1,7 +1,8 @@
 # Mana · Espacio Integral — manaespacio.com
 
 Sitio estático de [manaespacio.com](https://manaespacio.com): psicología online,
-sesiones focalizadas, oráculo, libros y viajes conscientes de la Lic. Agustina Nasello.
+sesiones focalizadas, atención presencial en Tandil, libros y viajes conscientes de la
+Lic. Agustina Nasello.
 
 Sin build, sin dependencias, sin framework. Se publica tal cual está el repositorio.
 

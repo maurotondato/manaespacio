@@ -17,7 +17,7 @@
 Para que pueda responderte con precisión, contame brevemente:
 
 1. **Qué estás buscando** — terapia sostenida, sesiones focalizadas, una lectura de
-   oráculo, el viaje grupal o los libros.
+   atención presencial en Tandil, el viaje grupal o los libros.
 2. **Desde qué país o zona horaria** escribís.
 3. **Qué días y horarios** te quedan más cómodos.
 

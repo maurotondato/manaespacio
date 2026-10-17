@@ -19,7 +19,7 @@ mis talentos, conectar con mi luz y avanzar hacia mis sueños.
 
 Hoy acompaño a otras personas en sus propios procesos, ofreciendo terapia psicológica
 online, compartiendo mi libro *"Nuevo paradigma: todo funciona desde el corazón"*,
-sesiones de oráculo y coordinando un viaje grupal a India.
+y coordinando un viaje grupal a India.
 
 ## Cómo trabajo
 
@@ -42,7 +42,7 @@ necesidades y objetivos planteados.
 
 - **Terapia psicológica online**, con encuentros sostenidos en el tiempo.
 - **Sesiones focalizadas**, un formato breve de cuatro encuentros para un tema puntual.
-- **Sesiones de oráculo**, como herramienta de conexión interior y autoconocimiento.
+- **Atención presencial en Tandil**, Provincia de Buenos Aires, a coordinar según disponibilidad.
 - **Libros y ebooks** para acompañar el proceso entre sesión y sesión.
 - **Viajes grupales conscientes**, como el viaje al alma a India.
 
